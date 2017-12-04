@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
 class CommentSection extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             comments: []
