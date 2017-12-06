@@ -1,27 +1,14 @@
-import React, { Component } from 'react';
-
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import SearchBar from './SearchBar';
-import postData from './application-data';
+import SearchBar from './components/SearchBar/SearchBar';
+import PostContainer from './components/PostContainer/PostContainer';
+import dummyData from './dummy-data';
 
-import PostContainer from './PostContainer';
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <SearchBar />
-        {postData.map((post, i) => 
-          <PostContainer key={i} postData={post} />
-        )}
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <SearchBar />
+    {dummyData.map((post, i) => <PostContainer key={i} postData={post} />)}
+  </div>
+);
 
 export default App;
