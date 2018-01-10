@@ -2,7 +2,7 @@ import React from 'react';
 
 import './PostContainer.css';
 
-import CommentSection from './CommentSection';
+import CommentSection from '../CommentSection/CommentSection';
 
 function PostContainer(props) {
 	const post = props.post;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import SearchBar from './SearchBar.js';
-import PostContainer from './PostContainer.js';
+import SearchBar from './components/SearchBar/SearchBar.js';
+import PostContainer from './components/PostContainer/PostContainer.js';
 
 import postData from './application-data.js';
 
