@@ -34,7 +34,7 @@ class CommentSection extends Component {
     render() {
         return (
             <div className="comment-section">
-                {this.state.comments? this.state.comments.map((comment, i) => ( 
+                {this.state.comments ? this.state.comments.map((comment, i) => ( 
                     <div className="comment" key={i}>
                         <div className="comment-user"><b>{comment.username}</b></div>
                         <div className="comment-text">{comment.text}</div>
