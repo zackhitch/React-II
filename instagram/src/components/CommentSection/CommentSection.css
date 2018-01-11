@@ -1,25 +1,22 @@
-.Comment {
+.CommentSection {
 	margin-top: 10px;
 }
 
-.Comment-username {
+.CommentSection__comment-username {
 	display: inline;
 }
 
-.Comment-body {
+.CommentSection__comment-body {
 	display: inline;
 	padding-left: 10px;
 }
 
-.Comments-add {
+.CommentSection__add input {
+  margin-top: 15px;
+  border: none;
 	border-top: 0.5px solid grey;
 }
 
-.Comments-add input {
-	margin-top: 15px;
-	border: none;
-}
-
-.Comments-timestamp {
+.CommentSection__timestamp {
 	margin: 10px 0 10px 0;
 }

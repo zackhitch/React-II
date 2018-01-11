@@ -10,7 +10,8 @@ class CommentSection extends Component {
 
 		this.state = {
 			username: "ivan",
-			comments: []
+			comments: [],
+			newCommentText: ""
 		}
 	}
 
@@ -20,42 +21,53 @@ class CommentSection extends Component {
 		});
 	}
 
-	addComment = (event) => {
+	submitNewComment = (event) => {
 		if (event.keyCode === 13) {
 			const newComment = {
 				username: this.state.username,
-				text: this.input.value
+				text: this.state.newCommentText
 			}
 
 			this.setState({
-				comments: [...this.state.comments, newComment]
+				comments: [...this.state.comments, newComment],
+				newCommentText: ""
 			})
-
-			this.input.value = "";
 		}
 	}
 
+	updateNewComment = (event) => {
+		this.setState({
+			newCommentText: event.target.value
+		});
+	}
+
 	render () {
-		const timestamp = this.props.timestamp;
 		return (
-			<div className="Comments">
-				<div className="Comments-list">
-					{this.state.comments.map((comment) => {
+			<div className="CommentSection">
+				<div className="CommentSection__list">
+					{this.state.comments.map((comment, index) => {
 						return (
-							<div className="Comment">
-								<h3 className="Comment-username">{comment.username}</h3>
-								<p className="Comment-body">{comment.text}</p>
+							<div className="CommentSection__comment" key={index}>
+								<h3 className="CommentSection__comment-username">{comment.username}</h3>
+								<p className="CommentSection__comment-body">{comment.text}</p>
 							</div>
 						);
 					})}
 				</div>
 
-				<div className="Comments-timestamp">
+				<div className="CommentSection__timestamp">
 					<Moment parse="MMMM Do YYYY, hh:mm:ss A" fromNow>{this.props.timestamp}</Moment>
 				</div>
 
-				<div className="Comments-add">
-					<input className="Comments-addField" type="text" onKeyDown={this.addComment} ref={input => this.input = input} placeholder="Add a comment..."></input>
+				<div className="CommentSection__add">
+					<input
+						className="CommentSection__addField"
+						type="text"
+						value={this.state.newCommentText}
+						onChange={this.updateNewComment}
+						onKeyDown={this.submitNewComment}
+						placeholder="Add a comment..."
+					></input>
 				</div>
 			</div>
 		);

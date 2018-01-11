@@ -7,19 +7,19 @@ import CommentSection from '../CommentSection/CommentSection';
 function PostContainer(props) {
 	const post = props.post;
 	return (
-		<div className="Post">
-			<div className="Post-header">
+		<div className="PostContainer">
+			<div className="PostContainer__header">
 				<img src={post.thumbnailUrl} />
-				<h3 className="Post-username">{post.username}</h3>
+				<h3 className="PostContainer__username">{post.username}</h3>
 			</div>
 
-			<div className="Post-image">
+			<div className="PostContainer__image">
 				<img src={post.imageUrl} />
 			</div>
 
-			<div className="Post-body">
-				<div className="Post-indications">
-					<h3 className="Post-likes">{post.likes} likes</h3>
+			<div className="PostContainer__body">
+				<div className="PostContainer__indications">
+					<h3 className="PostContainer__likes">{post.likes} likes</h3>
 				</div>
 
 				<CommentSection comments={post.comments} timestamp={post.timestamp} />
