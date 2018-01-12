@@ -39,3 +39,7 @@
 .PostContainer__likes {
 	display: inline;
 }
+
+.PostContainer__timestamp {
+	margin: 10px 0 10px 0;
+}

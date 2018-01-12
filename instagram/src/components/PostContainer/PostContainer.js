@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 import './PostContainer.css';
 
@@ -22,7 +23,11 @@ function PostContainer(props) {
 					<h3 className="PostContainer__likes">{post.likes} likes</h3>
 				</div>
 
-				<CommentSection comments={post.comments} timestamp={post.timestamp} />
+				<CommentSection comments={post.comments}>
+					<div className="PostContainer__timestamp">
+						<Moment parse="MMMM Do YYYY, hh:mm:ss A" fromNow>{post.timestamp}</Moment>
+					</div>
+				</CommentSection>
 			</div>
 
 		</div>

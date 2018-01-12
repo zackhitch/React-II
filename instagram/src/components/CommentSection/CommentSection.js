@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment';
 
 import './CommentSection.css';
 
@@ -55,9 +54,7 @@ class CommentSection extends Component {
 					})}
 				</div>
 
-				<div className="CommentSection__timestamp">
-					<Moment parse="MMMM Do YYYY, hh:mm:ss A" fromNow>{this.props.timestamp}</Moment>
-				</div>
+				{this.props.children}
 
 				<div className="CommentSection__add">
 					<input

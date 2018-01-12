@@ -9,7 +9,7 @@ import postData from './application-data.js';
 class App extends Component {
 
   constructor(props) {
-    super(props);
+    super();
     
     this.state = {
       allPosts: [],
