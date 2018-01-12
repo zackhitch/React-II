@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import SearchBar from './components/SearchBar/SearchBar.js';
-import PostContainer from './components/PostContainer/PostContainer.js';
+import Post from './components/Post/Post.js';
 
 import postData from './application-data.js';
 
@@ -49,7 +49,7 @@ class App extends Component {
         <div className="Posts">
           {this.state.displayedPosts.map((post, index) => {
             return (
-              <PostContainer key={index} post={post}/>        
+              <Post key={index} post={post}/>        
             )
           })}
         </div>

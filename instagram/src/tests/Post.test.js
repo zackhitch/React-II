@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import PostContainer from '../components/PostContainer/PostContainer';
+import Post from '../components/Post/Post';
 import postData from '../application-data';
 
-describe('Post Container', () => {
+describe('Post', () => {
     it('should render two image tags', () => {
-        const component = shallow(<PostContainer key={'2'} postData={postData[0]} />);
+        const component = shallow(<Post key={'2'} postData={postData[0]} />);
         expect(component.find('img').length).toBe(2);
     });
 });

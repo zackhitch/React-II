@@ -1,45 +1,45 @@
-.PostContainer {
+.Post {
 	border: 0.5px solid gray;
 	max-width: 500px;
 	margin-bottom: 40px;
 }
 
-.PostContainer__header {
+.Post__header {
 	width: 100%;
 	position: relative;
 	height: 60px;
 }
 
-.PostContainer__header img {
+.Post__header img {
 	display: inline-block;
 	height: 30px;
 	border-radius: 50%;
 	padding: 15px;
 }
 
-.PostContainer__header h3 {
+.Post__header h3 {
 	position: absolute;
 	display: inline;
 	margin-top: 20px;
 }
 
-.PostContainer__image {
+.Post__image {
 	width: 100%;
 }
 
-.PostContainer__image img {
+.Post__image img {
 	background-size: contain;
 	width: 100%;
 }
 
-.PostContainer__body {
+.Post__body {
 	margin: 15px;
 }
 
-.PostContainer__likes {
+.Post__likes {
 	display: inline;
 }
 
-.PostContainer__timestamp {
+.Post__timestamp {
 	margin: 10px 0 10px 0;
 }

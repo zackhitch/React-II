@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import './CommentSection.css';
+import './Comments.css';
 
-class CommentSection extends Component {
+class Comments extends Component {
 
 	constructor(props) {
 		super();
@@ -42,13 +42,13 @@ class CommentSection extends Component {
 
 	render () {
 		return (
-			<div className="CommentSection">
-				<div className="CommentSection__list">
+			<div className="Comments">
+				<div className="Comments__list">
 					{this.state.comments.map((comment, index) => {
 						return (
-							<div className="CommentSection__comment" key={index}>
-								<h3 className="CommentSection__comment-username">{comment.username}</h3>
-								<p className="CommentSection__comment-body">{comment.text}</p>
+							<div className="Comments__comment" key={index}>
+								<h3 className="Comments__comment-username">{comment.username}</h3>
+								<p className="Comments__comment-body">{comment.text}</p>
 							</div>
 						);
 					})}
@@ -56,9 +56,9 @@ class CommentSection extends Component {
 
 				{this.props.children}
 
-				<div className="CommentSection__add">
+				<div className="Comments__add">
 					<input
-						className="CommentSection__addField"
+						className="Comments__addField"
 						type="text"
 						value={this.state.newCommentText}
 						onChange={this.updateNewComment}
@@ -71,4 +71,4 @@ class CommentSection extends Component {
 	}
 };
 
-export default CommentSection;
+export default Comments;
