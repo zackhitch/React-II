@@ -8,7 +8,7 @@ class CommentSection extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      comment: ''
+      comment: '',
     };
   }
 
@@ -16,7 +16,7 @@ class CommentSection extends React.Component {
     const id = this.props.postId;
     if (localStorage.getItem(id)) {
       this.setState({
-        comments: JSON.parse(localStorage.getItem(this.props.postId))
+        comments: JSON.parse(localStorage.getItem(this.props.postId)),
       });
     } else {
       this.setComments();
@@ -38,24 +38,23 @@ class CommentSection extends React.Component {
     this.setState({ comment: e.target.value });
   };
 
-  handleCommentSubmit = e => {
+  addNewComment = e => {
     e.preventDefault();
     const newComment = { text: this.state.comment, username: 'ryanhamblin' };
-    const comments = this.state.comments.slice();
+    const comments = [...this.state.comments];
     comments.push(newComment);
     this.setState({ comments, comment: '' });
-    setTimeout(() => {
-      this.setComments();
-    }, 500);
   };
 
   render() {
     return (
       <div>
-        {this.state.comments.map((c, i) => <Comment key={i} comment={c} />)}
+        {this.state.comments.map((c, i) => (
+          <Comment key={i} comment={c} />
+        ))}
         <CommentInput
           comment={this.state.comment}
-          submitComment={this.handleCommentSubmit}
+          submitComment={this.addNewComment}
           changeComment={this.commentHandler}
         />
       </div>
@@ -66,7 +65,7 @@ class CommentSection extends React.Component {
 CommentSection.propTypes = {
   comments: PropTypes.arrayOf(
     PropTypes.shape({ text: PropTypes.string, username: PropTypes.string })
-  )
+  ),
 };
 
 export default CommentSection;
