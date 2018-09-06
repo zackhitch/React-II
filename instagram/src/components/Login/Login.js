@@ -7,7 +7,7 @@ class Login extends Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
     };
   }
 
@@ -17,7 +17,7 @@ class Login extends Component {
 
   handleLoginSubmit = e => {
     const user = this.state.username;
-    localStorage.setItem('user', user);
+    localStorage.setItem('username', user);
     window.location.reload();
   };
 
